@@ -1,0 +1,32 @@
+﻿@using Case1WebApplication.Models;
+@model List<Student>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Student Name</th>
+        <th>Surname</th>
+        <th>Midterm</th>
+        <th>Final</th>
+        <th>Delete</th>
+        <th>Update</th>
+    </tr>
+    @foreach(var x in Model)
+    {
+        <tr>
+            <td>@x.Id</td>
+            <td>@x.Name</td>
+            <td>@x.Surname</td>
+            <td>@x.Midterm</td>
+            <td>@x.Final</td>
+            <td><a href="/Student/StudentDelete/@x.Id" class="btn btn-danger">Delete</a></td>
+            <td><a href="/Student/GetStudent/@x.Id" class="btn btn-warning">Update</a></td>
+        </tr>
+    }
+
+</table>
+<a href="/Student/AddStudent" class="btn btn-primary">New Student</a>

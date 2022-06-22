@@ -1,0 +1,29 @@
+﻿@model Case1WebApplication.Models.Student
+@{
+    ViewData["Title"] = "AddStudent";
+    Layout = "~/Views/Shared/_StudentLayout.cshtml";
+}
+
+<h2>AddStudent</h2>
+<br />
+<form class="form-group" method="post">
+
+    <div style="margin-bottom: 15px">
+        @Html.LabelFor(x => x.Name)
+        @Html.TextBoxFor(x => x.Name, new {@class = "form-control"})
+    </div>
+    <div style="margin-bottom: 15px">
+        @Html.LabelFor(x => x.Surname)
+        @Html.TextBoxFor(x => x.Surname, new {@class = "form-control"})
+    </div>
+    <div style="margin-bottom: 15px">
+        @Html.LabelFor(x => x.Midterm)
+        @Html.TextBoxFor(x => x.Midterm, new {@class = "form-control"})
+    </div>
+    <div style="margin-bottom: 15px">
+        @Html.LabelFor(x => x.Final)
+        @Html.TextBoxFor(x => x.Final, new {@class = "form-control"})
+    </div>
+    <button class="btn btn-info">Save</button>
+</form>
+
